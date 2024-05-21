@@ -11,13 +11,17 @@ from typing import Annotated
 import random
 from fastapi.middleware.cors import CORSMiddleware
 import time
+import traceback
+
 
 app = FastAPI()
 
 # Add CORS middleware if necessary
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins, you can restrict this to specific origins
+    allow_origins=[
+        "*"
+    ],  # Allows all origins, you can restrict this to specific origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,14 +32,17 @@ with open(classes_file_path, 'r') as f:
     classes = f.read()
 classes = classes.split('\n')
 
+
 def get_classes(index):
     return classes[index]
+
 
 def load_rgb_frames_from_bytes(bytes_list, num=-1):
     frames = []
     count = 0
     for byte_data in bytes_list:
-        img = cv2.imdecode(np.frombuffer(byte_data, np.uint8), cv2.IMREAD_COLOR)
+        img = cv2.imdecode(np.frombuffer(byte_data, np.uint8),
+                           cv2.IMREAD_COLOR)
         if img is None:
             continue
         h, w, c = img.shape
@@ -48,25 +55,25 @@ def load_rgb_frames_from_bytes(bytes_list, num=-1):
             break
     return torch.Tensor(np.asarray(frames, dtype=np.float32))
 
+
 def run_on_tensor(weights, ip_tensor, num_classes):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     i3d = InceptionI3d(400, in_channels=3)
     i3d.replace_logits(num_classes)
-    i3d.load_state_dict(torch.load(weights, map_location=torch.device('cpu')))
-    i3d.to('cpu')
+    i3d.load_state_dict(torch.load(weights, map_location=torch.device(device)))
+    i3d.to(device)
     i3d.eval()
 
-    t = ip_tensor.shape[2]
-    ip_tensor = ip_tensor.to('cpu')
+    ip_tensor = ip_tensor.to(device)
     per_frame_logits = i3d(ip_tensor)
-
-    print(f"Shape of per_frame_logits: {per_frame_logits.shape}")
 
     if len(per_frame_logits.shape) == 5:  # (N, C, T, H, W)
         predictions = torch.mean(per_frame_logits, dim=(3, 4))  # (N, C, T)
     elif len(per_frame_logits.shape) == 4:  # (N, C, T, H)
         predictions = torch.mean(per_frame_logits, dim=3)  # (N, C, T)
     else:
-        raise ValueError(f"Unexpected shape of per_frame_logits: {per_frame_logits.shape}")
+        raise ValueError(
+            f"Unexpected shape of per_frame_logits: {per_frame_logits.shape}")
 
     predictions = torch.mean(predictions, dim=2)  # (N, C)
 
@@ -74,32 +81,31 @@ def run_on_tensor(weights, ip_tensor, num_classes):
 
     return out_labels
 
+
 # Load model weights and classes once
 weights = 'archived/asl2000/FINAL_nslt_2000_iters=5104_top1=32.48_top5=57.31_top10=66.31.pt'
 num_classes = 2000
 
-# WebSocket endpoint
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     images_array = []
     try:
         while True:
-            # for performace measure
             image = await websocket.receive_bytes()
             images_array.append(image)
-            if len(images_array) >= 64:  # Assuming we want to process 64 frames at a time
+            if len(images_array) >= 64:
+                start = time.time()
                 frames_tensor = load_rgb_frames_from_bytes(images_array, num=64)
                 frames_tensor = frames_tensor.permute(3, 0, 1, 2)  # Rearrange to C, T, H, W
                 frames_tensor = frames_tensor.unsqueeze(0)  # Add batch dimension
                 out_labels = run_on_tensor(weights, frames_tensor, num_classes)
                 prediction_text = get_classes(out_labels[0])
+                print("time to predict: ", time.time() - start)
                 await websocket.send_text(prediction_text)
                 images_array.clear()
     except Exception as e:
-        print(e)
-        await websocket.send_text(" ")
-
-if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+        print("Exception occurred: ", e)
+        traceback.print_exc()
+        await websocket.close()
