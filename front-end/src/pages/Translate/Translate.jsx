@@ -23,10 +23,12 @@ const Translate = () => {
         if (wordsArr[wordsArr.length - 1] === data) {
           return prev;
         }
-        if (wordsArr.length > 10) wordsArr = [];
+        if (wordsArr.length > 10) {
+          wordsArr = [];
+          setConversation((prevConversation) => [...prevConversation, prev]);
+        }
         return [...wordsArr, data].join(" ");
       });
-      setConversation((prev) => [...prev, data]);
       setStatus("Press Enter to start");
       ws.close();
     };
@@ -81,35 +83,37 @@ const Translate = () => {
         sx={{ position: "relative" }}
       >
         <Card elevation={3} sx={{ widht: "100%", p: 3 }}>
-          <Webcam
-            mirrored={true}
-            ref={webcamRef}
-            screenshotFormat="image/webp"
-          />
-          <Typography
-            variant="body1"
-            sx={{
-              position: "absolute",
-              bottom: "10%",
-              color: "white",
-              background: "rgba(0, 0, 0, 0.5)",
-              padding: "5px",
-            }}
-          >
-            {text}
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              position: "absolute",
-              top: "10%",
-              color: "white",
-              background: "rgba(0, 0, 0, 0.5)",
-              padding: "5px",
-            }}
-          >
-            {status}
-          </Typography>
+          <Grid container justifyContent="center">
+            <Webcam
+              mirrored={true}
+              ref={webcamRef}
+              screenshotFormat="image/webp"
+            />
+            <Typography
+              variant="body1"
+              sx={{
+                position: "absolute",
+                bottom: "10%",
+                color: "white",
+                background: "rgba(0, 0, 0, 0.5)",
+                padding: "5px",
+              }}
+            >
+              {text}
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                position: "absolute",
+                top: "10%",
+                color: "white",
+                background: "rgba(0, 0, 0, 0.5)",
+                padding: "5px",
+              }}
+            >
+              {status}
+            </Typography>
+          </Grid>
         </Card>
       </Grid>
       <Grid item container xs={12} justifyContent="center">

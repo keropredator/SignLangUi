@@ -8,38 +8,27 @@ const Layout = ({ children }) => {
         <AppBar position="static">
           <Toolbar>
             <Grid container gap={3}>
-              <Button variant="outlined">
-                <Link
-                  to="/"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  Home
-                </Link>
-              </Button>
-              <Button variant="outlined">
-                <Link
-                  to="/translate"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  Translate
-                </Link>
-              </Button>
-              <Button variant="outlined">
-                <Link
-                  to="/team"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  Team
-                </Link>
-              </Button>
-              <Button variant="outlined">
-                <Link
-                  to="/about-us"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  About Us
-                </Link>
-              </Button>
+              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                <Button variant="outlined">Home</Button>
+              </Link>
+              <Link
+                to="/translate"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Button variant="outlined">Translate</Button>
+              </Link>
+              <Link
+                to="/team"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Button variant="outlined">Team</Button>
+              </Link>
+              <Link
+                to="/about-us"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Button variant="outlined">About Us</Button>
+              </Link>
             </Grid>
           </Toolbar>
         </AppBar>

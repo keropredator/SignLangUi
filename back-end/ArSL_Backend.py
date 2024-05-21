@@ -43,11 +43,15 @@ def load_rgb_frames_from_bytes(bytes_list, num=-1):
     for byte_data in bytes_list:
         img = cv2.imdecode(np.frombuffer(byte_data, np.uint8),
                            cv2.IMREAD_COLOR)
+        if count == 1:
+            cv2.imwrite(f'preview/prev0.jpg', img)
         if img is None:
             continue
         h, w, c = img.shape
         sc = 224 / h
         img = cv2.resize(img, dsize=(0, 0), fx=sc, fy=sc)
+        if count == 1:
+            cv2.imwrite(f'preview/prev1.jpg', img)
         img = (img / 255.0) * 2 - 1
         frames.append(img)
         count += 1
