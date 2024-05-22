@@ -1,4 +1,4 @@
-import { Card, Grid } from "@mui/material";
+import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 const teamMembers = [
   {
     name: "Kirolos Magdy",
@@ -11,8 +11,8 @@ const teamMembers = [
     image: "https://avatars.githubusercontent.com/u/77224296?v=4",
   },
   {
-    name: "Omar Mohamed",
-    role: "Backend Developer",
+    name: "Omar Mohammed",
+    role: "Back-end Developer",
     image: "https://avatars.githubusercontent.com/u/77224296?v=4",
   },
   {
@@ -38,12 +38,29 @@ const teamMembers = [
 ];
 const Team = () => {
   return (
-    <Grid container spacing={6} sx={{ p: 3 }}>
-      <Grid item xs={2.5}>
-        <Card elevation={3} sx={{ p: 3 }}>
-          First 7oko
-        </Card>
-      </Grid>
+    <Grid container spacing={10} sx={{ px: 10 }} justifyContent="center">
+      {teamMembers.map((member) => (
+        <Grid item xs={4} key={member.name}>
+          <Card
+            elevation={3}
+            sx={{ px: 3, display: "flex", alignItems: "center" }}
+          >
+            <CardMedia
+              component="img"
+              sx={{ width: 75, borderRadius: "50%" }}
+              image={member.image}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {member.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {member.role}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
     </Grid>
   );
 };
