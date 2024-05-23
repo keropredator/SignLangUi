@@ -24,10 +24,10 @@ const Layout = ({ children }) => {
                 <Button variant="outlined">Team</Button>
               </Link>
               <Link
-                to="/about-us"
+                to="/sign-up"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <Button variant="outlined">About Us</Button>
+                <Button variant="outlined">Sign up</Button>
               </Link>
             </Grid>
           </Toolbar>

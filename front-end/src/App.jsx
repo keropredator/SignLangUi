@@ -4,7 +4,8 @@ import Layout from "./Layout";
 import Home from "./pages/Home/Home";
 import Translate from "./pages/Translate/Translate";
 import Team from "./pages/Team/Team";
-import AboutUs from "./pages/AboutUs/AboutUs";
+import SignUp from "./pages/SignUp/SignUp";
+import SignIn from "./pages/SignIn/SignIn";
 
 const darkTheme = createTheme({
   palette: {
@@ -21,7 +22,8 @@ function App() {
             <Route path="/" Component={Home} />
             <Route path="/translate" Component={Translate} />
             <Route path="/team" Component={Team} />
-            <Route path="/about-us" Component={AboutUs} />
+            <Route path="/sign-up" Component={SignUp} />
+            <Route path="/sign-in" Component={SignIn} />
           </Routes>
         </Layout>
       </BrowserRouter>

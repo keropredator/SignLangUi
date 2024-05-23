@@ -1,4 +1,5 @@
-import { Typography, Grid, Button, Card } from "@mui/material";
+import { Typography, Grid, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -32,9 +33,14 @@ const Home = () => {
           Learn and practice sign language with interactive tutorials and
           videos.
         </Typography>
-        <Button variant="contained" color="primary" fullWidth>
-          Get Started
-        </Button>
+        <Link
+          to="/translate"
+          style={{ textDecoration: "none", color: "inherit", width: "100%" }}
+        >
+          <Button variant="contained" color="primary" fullWidth>
+            Get Started
+          </Button>
+        </Link>
       </Grid>
 
       <Grid item container xs={12} spacing={12}>
