@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Grid, Toolbar } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import logo from "./pages/images/Logo.png";
+import { red } from "@mui/material/colors";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -28,25 +29,93 @@ const Layout = ({ children }) => {
                   to="/"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Button variant="outlined">Home</Button>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      fontFamily: "monospace",
+                      fontSize: "1rem",
+                      fontWeight: "bold",
+                      border: "none",
+                      borderRadius: "10px",
+                      color: "#08457E",
+                      "&:hover": {
+                        border: "none",
+                        backgroundColor: red[50],
+                        color: red[300],
+                      },
+                    }}
+                  >
+                    Home
+                  </Button>
                 </Link>
                 <Link
                   to="/translate"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Button variant="outlined">Translate</Button>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      fontFamily: "monospace",
+                      fontSize: "1rem",
+                      fontWeight: "bold",
+                      border: "none",
+                      borderRadius: "10px",
+                      color: "#08457E",
+                      "&:hover": {
+                        border: "none",
+                        backgroundColor: red[50],
+                        color: red[300],
+                      },
+                    }}
+                  >
+                    Translate
+                  </Button>
                 </Link>
                 <Link
                   to="/team"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Button variant="outlined">Team</Button>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      fontFamily: "monospace",
+                      fontSize: "1rem",
+                      fontWeight: "bold",
+                      border: "none",
+                      borderRadius: "10px",
+                      color: "#08457E",
+                      "&:hover": {
+                        border: "none",
+                        backgroundColor: red[50],
+                        color: red[300],
+                      },
+                    }}
+                  >
+                    Team
+                  </Button>
                 </Link>
                 <Link
                   to="/sign-up"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Button variant="outlined">Sign up</Button>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      fontFamily: "monospace",
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      border: "none",
+                      borderRadius: "10px",
+                      color: "#08457E",
+                      "&:hover": {
+                        border: "none",
+                        backgroundColor: red[50],
+                        color: red[300],
+                      },
+                    }}
+                  >
+                    Sign up
+                  </Button>
                 </Link>
               </Box>
             </Grid>

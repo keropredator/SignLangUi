@@ -7,7 +7,15 @@ import Team from "./pages/Team/Team";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 
-const darkTheme = createTheme({});
+const darkTheme = createTheme({
+  typography: {
+    fontFamily: `"Roboto", "Helvetica", "Arial",`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+  },
+});
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>

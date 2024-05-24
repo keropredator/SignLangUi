@@ -17,7 +17,7 @@ const Home = () => {
             color="textPrimary"
             gutterBottom
           >
-            SignSpeak: Sign Language Translation
+            SignsSpeak: Sign Language Translation
           </Typography>
           <Typography
             align="center"
@@ -89,8 +89,8 @@ const Home = () => {
           color="textSecondary"
           paragraph
         >
-          Our cutting-edge technology uses your device's camera to detect and
-          interpret sign language gestures and expressions in real-time.
+          Our cutting-edge technology uses your device&apos;s camera to detect
+          and interpret sign language gestures and expressions in real-time.
         </Typography>
         <img
           src={img3}
