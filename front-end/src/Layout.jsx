@@ -1,8 +1,12 @@
 import { AppBar, Box, Button, Grid, Toolbar } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "./pages/images/Logo.png";
 
 const Layout = ({ children }) => {
+  const location = useLocation();
+  if (["/sign-up", "/sign-in"].includes(location.pathname)) {
+    return <>{children}</>;
+  }
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
