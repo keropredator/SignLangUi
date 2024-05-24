@@ -8,10 +8,11 @@ import img4 from "../images/img4.jpg";
 const Home = () => {
   return (
     <Grid container rowSpacing={40} columnSpacing={10} sx={{ p: 3 }}>
-      <Grid item container justifyContent="center" alignItems="center" xs={12}>
+      <Grid item container justifyContent="" alignItems="center" xs={12}>
         <Grid item xs={12} md={8}>
           <Typography
-            align="center"
+            // align="center"
+            mt={8}
             component="h1"
             variant="h2"
             color="textPrimary"
@@ -20,7 +21,7 @@ const Home = () => {
             SignsSpeak: Sign Language Translation
           </Typography>
           <Typography
-            align="center"
+            // align="center"
             variant="h5"
             color="textSecondary"
             paragraph
@@ -33,7 +34,26 @@ const Home = () => {
               to="/translate"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <Button variant="contained" color="primary" size="large">
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                sx={{
+                  fontFamily: "Arial",
+                  fontWeight: "bold",
+                  fontSize: "20px",
+                  textTransform: "none",
+                  transition: "0.3s",
+                  borderRadius: "20px",
+                  backgroundImage:
+                    "linear-gradient(45deg, #3f51b5 30%, #f50057 90%)",
+                  boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+                  "&:hover": {
+                    backgroundImage:
+                      "linear-gradient(315deg, #FE6B8B 30%, #FF8E53 90%)",
+                  },
+                }}
+              >
                 Get Started
               </Button>
             </Link>

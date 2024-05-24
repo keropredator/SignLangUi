@@ -15,6 +15,12 @@ const darkTheme = createTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
   },
+  // BG color of the app
+  // palette: {
+  //   background: {
+  //     default: "#028391",
+  //   },
+  // },
 });
 function App() {
   return (
