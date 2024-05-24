@@ -7,11 +7,7 @@ import Team from "./pages/Team/Team";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
+const darkTheme = createTheme({});
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
