@@ -1,7 +1,21 @@
 import { AppBar, Box, Button, Grid, Toolbar } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import logo from "./pages/images/Logo.png";
 import { red } from "@mui/material/colors";
+
+const btnStyle = {
+  fontFamily: "monospace",
+  fontSize: "1rem",
+  fontWeight: "bold",
+  border: "none",
+  borderRadius: "10px",
+  color: "#08457E",
+  "&:hover": {
+    border: "none",
+    backgroundColor: red[50],
+    color: red[300],
+  },
+};
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -29,68 +43,20 @@ const Layout = ({ children }) => {
                   to="/"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      fontFamily: "monospace",
-                      fontSize: "1rem",
-                      fontWeight: "bold",
-                      border: "none",
-                      borderRadius: "10px",
-                      color: "#08457E",
-                      "&:hover": {
-                        border: "none",
-                        backgroundColor: red[50],
-                        color: red[300],
-                      },
-                    }}
-                  >
+                  <Button variant="outlined" sx={btnStyle}>
                     Home
                   </Button>
                 </Link>
-                <Link
-                  to="/translate"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      fontFamily: "monospace",
-                      fontSize: "1rem",
-                      fontWeight: "bold",
-                      border: "none",
-                      borderRadius: "10px",
-                      color: "#08457E",
-                      "&:hover": {
-                        border: "none",
-                        backgroundColor: red[50],
-                        color: red[300],
-                      },
-                    }}
-                  >
+                <NavLink to="/translate">
+                  <Button variant="outlined" sx={btnStyle}>
                     Translate
                   </Button>
-                </Link>
+                </NavLink>
                 <Link
                   to="/team"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      fontFamily: "monospace",
-                      fontSize: "1rem",
-                      fontWeight: "bold",
-                      border: "none",
-                      borderRadius: "10px",
-                      color: "#08457E",
-                      "&:hover": {
-                        border: "none",
-                        backgroundColor: red[50],
-                        color: red[300],
-                      },
-                    }}
-                  >
+                  <Button variant="outlined" sx={btnStyle}>
                     Team
                   </Button>
                 </Link>
