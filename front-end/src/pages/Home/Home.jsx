@@ -22,11 +22,13 @@ const Home = () => {
               color="textPrimary"
               gutterBottom
             >
-              SignsSpeak: Sign Language Translation
+              Sign language connects hearts and minds through its beauty.
             </Typography>
             <Typography variant="h5" color="textSecondary" paragraph>
-              Bridging the communication gap with AI-powered sign language
-              translation.
+              We are creating a world where silence speaks louder, where every
+              sign is a step towards understanding. Explore how we empower
+              communication for the deaf community with <br />
+              cutting-edge AI Technology.
             </Typography>
             <Grid item container justifyContent="center" xs={12}>
               <RouterLink

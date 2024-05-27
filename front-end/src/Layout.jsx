@@ -2,6 +2,17 @@ import { AppBar, Box, Button, Grid, Toolbar } from "@mui/material";
 import { Link, useLocation, NavLink } from "react-router-dom";
 import logo from "./pages/images/Logo.png";
 
+/*fontFamily: "monospace",
+fontSize: "1rem",
+fontWeight: "bold",
+border: "none",
+borderRadius: "10px",
+color: "#08457E",
+"&:hover": {
+transition: "0.3s",
+border: "none",
+backgroundColor: "#dfdddb",*/
+
 const btnStyle = {
   fontFamily: "monospace",
   fontSize: "1rem",
@@ -29,6 +40,7 @@ const btnStyle2 = {
     transform: "scale(1.1)",
   },
 };
+
 const Layout = ({ children }) => {
   const location = useLocation();
   if (["/sign-up", "/sign-in"].includes(location.pathname)) {
