@@ -7,7 +7,7 @@ import img4 from "../images/img4.jpg";
 
 const Home = () => {
   return (
-    <Grid container rowSpacing={40} columnSpacing={10} sx={{ p: 3 }}>
+    <Grid container rowSpacing={40} columnSpacing={10} sx={{ p: 5 }}>
       <Grid item container justifyContent="" alignItems="center" xs={12}>
         <Grid item xs={12} md={8}>
           <Typography
@@ -18,7 +18,7 @@ const Home = () => {
             color="textPrimary"
             gutterBottom
           >
-            SignsSpeak: Sign Language Translation
+            Sign language connects hearts and minds through its beauty.
           </Typography>
           <Typography
             // align="center"
@@ -26,10 +26,12 @@ const Home = () => {
             color="textSecondary"
             paragraph
           >
-            Bridging the communication gap with AI-powered sign language
-            translation.
+            We are creating a world where silence speaks louder, where every
+            sign is a step towards understanding. Explore how we empower
+            communication for the deaf community with <br />
+            cutting-edge AI Technology.
           </Typography>
-          <Grid item container justifyContent="center" xs={12}>
+          <Grid item container justifyContent="center" xs={10}>
             <Link
               to="/translate"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -39,22 +41,23 @@ const Home = () => {
                 color="primary"
                 size="large"
                 sx={{
-                  fontFamily: "Arial",
-                  fontWeight: "bold",
-                  fontSize: "20px",
+                  fontFamily: "monospace",
+                  fontSize: "15px",
                   textTransform: "none",
                   transition: "0.3s",
-                  borderRadius: "20px",
-                  backgroundImage:
-                    "linear-gradient(45deg, #3f51b5 30%, #f50057 90%)",
-                  boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+                  // borderRadius: "10px",
+                  padding: "10px 50px",
+                  mt: 2,
+                  backgroundColor: "#c83c4c",
+                  boxShadow: "0 3px 5px 2px rgba(255, 255, 255, .5)",
                   "&:hover": {
-                    backgroundImage:
-                      "linear-gradient(315deg, #FE6B8B 30%, #FF8E53 90%)",
+                    backgroundColor: "#c83c4c",
+                    transition: "0.5 ease-in-out",
+                    transform: "scale(1.1)",
                   },
                 }}
               >
-                Get Started
+                Try it now!
               </Button>
             </Link>
           </Grid>

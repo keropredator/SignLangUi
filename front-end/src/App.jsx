@@ -16,11 +16,11 @@ const darkTheme = createTheme({
     fontWeightMedium: 500,
   },
   // BG color of the app
-  // palette: {
-  //   background: {
-  //     default: "#028391",
-  //   },
-  // },
+  palette: {
+    background: {
+      default: "#ebebeb",
+    },
+  },
 });
 function App() {
   return (

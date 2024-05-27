@@ -39,9 +39,9 @@ const Layout = ({ children }) => {
                       borderRadius: "10px",
                       color: "#08457E",
                       "&:hover": {
+                        transition: "0.3s",
                         border: "none",
-                        backgroundColor: red[50],
-                        color: red[300],
+                        backgroundColor: "#dfdddb",
                       },
                     }}
                   >
@@ -63,8 +63,7 @@ const Layout = ({ children }) => {
                       color: "#08457E",
                       "&:hover": {
                         border: "none",
-                        backgroundColor: red[50],
-                        color: red[300],
+                        backgroundColor: "#dfdddb",
                       },
                     }}
                   >
@@ -86,8 +85,7 @@ const Layout = ({ children }) => {
                       color: "#08457E",
                       "&:hover": {
                         border: "none",
-                        backgroundColor: red[50],
-                        color: red[300],
+                        backgroundColor: "#dfdddb",
                       },
                     }}
                   >
@@ -106,11 +104,13 @@ const Layout = ({ children }) => {
                       fontSize: "1rem",
                       border: "none",
                       borderRadius: "10px",
-                      color: "#08457E",
+                      transition: "0.3s",
+                      color: "#fff",
+                      backgroundColor: "#c83c4c",
                       "&:hover": {
                         border: "none",
-                        backgroundColor: red[50],
-                        color: red[300],
+                        backgroundColor: "#c83c4c",
+                        transform: "scale(1.1)",
                       },
                     }}
                   >
