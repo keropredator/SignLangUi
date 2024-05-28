@@ -2,17 +2,6 @@ import { AppBar, Box, Button, Grid, Toolbar } from "@mui/material";
 import { Link, useLocation, NavLink } from "react-router-dom";
 import logo from "./pages/images/Logo.png";
 
-/*fontFamily: "monospace",
-fontSize: "1rem",
-fontWeight: "bold",
-border: "none",
-borderRadius: "10px",
-color: "#08457E",
-"&:hover": {
-transition: "0.3s",
-border: "none",
-backgroundColor: "#dfdddb",*/
-
 const btnStyle = {
   fontFamily: "monospace",
   fontSize: "1rem",
@@ -62,7 +51,7 @@ const Layout = ({ children }) => {
                   }}
                 />
               </Link>
-              <Box display="flex" gap={3}>
+              <Box display="flex" gap={3} justifyContent="center" flexGrow={1}>
                 <Link
                   to="/"
                   style={{ textDecoration: "none", color: "inherit" }}
@@ -87,15 +76,15 @@ const Layout = ({ children }) => {
                     Team
                   </Button>
                 </Link>
-                <Link
-                  to="/sign-up"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <Button variant="outlined" sx={btnStyle2}>
-                    Sign up
-                  </Button>
-                </Link>
               </Box>
+              <Link
+                to="/sign-up"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Button variant="outlined" sx={{ ...btnStyle2, ml: "auto" }}>
+                  Sign up
+                </Button>
+              </Link>
             </Grid>
           </Toolbar>
         </AppBar>

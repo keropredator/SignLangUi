@@ -8,23 +8,38 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
+const tryBtnStyle = {
+  fontFamily: "sans-serif",
+  fontSize: "15px",
+  textTransform: "none",
+  transition: "0.3s",
+  borderRadius: "10px",
+  padding: "10px 50px",
+  mt: 2,
+  backgroundColor: "#c83c4c",
+  boxShadow: "0 3px 5px 2px rgba(255, 255, 255, .5)",
+  "&:hover": {
+    backgroundColor: "#c83c4c",
+    transition: "0.5 ease-in-out",
+    transform: "scale(1.1)",
+  },
+};
 const Home = () => {
   return (
     <>
-      <Grid container rowSpacing={40} columnSpacing={10} sx={{ p: 3 }}>
-        <Grid item container justifyContent="" alignItems="center" xs={12}>
-          <Grid item xs={12} md={12} sx={{ bgcolor: "#F8FAE5" }}>
-            <Typography
-              mt={8}
-              component="h1"
-              variant="h2"
-              color="textPrimary"
-              gutterBottom
-            >
+      <Grid container rowSpacing={40} columnSpacing={10} sx={{ p: 5 }}>
+        <Grid
+          item
+          container
+          justifyContent="center"
+          alignItems="center"
+          xs={12}
+        >
+          <Grid item xs={12} md={8} align="center">
+            <Typography mt={4} component="h1" variant="h2" gutterBottom>
               Sign language connects hearts and minds through its beauty.
             </Typography>
-            <Typography variant="h5" color="textSecondary" paragraph>
+            <Typography variant="h5" paragraph>
               We are creating a world where silence speaks louder, where every
               sign is a step towards understanding. Explore how we empower
               communication for the deaf community with <br />
@@ -39,23 +54,9 @@ const Home = () => {
                   variant="contained"
                   color="primary"
                   size="large"
-                  sx={{
-                    fontFamily: "Arial",
-                    fontWeight: "bold",
-                    fontSize: "20px",
-                    textTransform: "none",
-                    transition: "0.3s",
-                    borderRadius: "20px",
-                    backgroundImage:
-                      "linear-gradient(45deg, #3f51b5 30%, #f50057 90%)",
-                    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-                    "&:hover": {
-                      backgroundImage:
-                        "linear-gradient(315deg, #FE6B8B 30%, #FF8E53 90%)",
-                    },
-                  }}
+                  sx={tryBtnStyle}
                 >
-                  Get Started
+                  Try it now!
                 </Button>
               </RouterLink>
             </Grid>
@@ -176,7 +177,7 @@ const Footer = () => {
   return (
     <Box
       component="footer"
-      sx={{ bgcolor: "#F1E5D1", py: 6, fontFamily: "monospace" }}
+      sx={{ bgcolor: "#F4F7ED", py: 6, fontFamily: "monospace", boxShadow: 8 }}
     >
       <Grid container justifyContent="space-between" sx={{ px: 4 }}>
         <Grid item>
