@@ -4,7 +4,7 @@ import torch
 import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
-from pytorch_i3d import InceptionI3d
+from pytorch_i3d import InceptionI3d  # Make sure this is correctly installed and available
 import matplotlib.pyplot as plt
 from fastapi import FastAPI, File, WebSocket
 from typing import Annotated
@@ -13,22 +13,19 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 import traceback
 
-
 app = FastAPI()
 
 # Add CORS middleware if necessary
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "*"
-    ],  # Allows all origins, you can restrict this to specific origins
+    allow_origins=["*"],  # Allows all origins, you can restrict this to specific origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 classes_file_path = 'preprocess/wlasl_class_list.txt'
-with open(classes_file_path, 'r') as f:
+with open(classes_file_path, 'r', encoding='utf-8') as f:
     classes = f.read()
 classes = classes.split('\n')
 
@@ -41,8 +38,7 @@ def load_rgb_frames_from_bytes(bytes_list, num=-1):
     frames = []
     count = 0
     for byte_data in bytes_list:
-        img = cv2.imdecode(np.frombuffer(byte_data, np.uint8),
-                           cv2.IMREAD_COLOR)
+        img = cv2.imdecode(np.frombuffer(byte_data, np.uint8), cv2.IMREAD_COLOR)
         if count == 1:
             cv2.imwrite(f'preview/prev0.jpg', img)
         if img is None:
@@ -76,8 +72,7 @@ def run_on_tensor(weights, ip_tensor, num_classes):
     elif len(per_frame_logits.shape) == 4:  # (N, C, T, H)
         predictions = torch.mean(per_frame_logits, dim=3)  # (N, C, T)
     else:
-        raise ValueError(
-            f"Unexpected shape of per_frame_logits: {per_frame_logits.shape}")
+        raise ValueError(f"Unexpected shape of per_frame_logits: {per_frame_logits.shape}")
 
     predictions = torch.mean(predictions, dim=2)  # (N, C)
 
@@ -107,7 +102,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 out_labels = run_on_tensor(weights, frames_tensor, num_classes)
                 prediction_text = get_classes(out_labels[0])
                 print("time to predict: ", time.time() - start)
-                await websocket.send_text(prediction_text)
+                await websocket.send_text(prediction_text.encode('utf-8').decode('utf-8'))
                 images_array.clear()
     except Exception as e:
         print("Exception occurred: ", e)
