@@ -1,15 +1,15 @@
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { Link, useNavigate } from "react-router-dom";
-import { Card } from "@mui/material";
+import Avatar from "@mui/material/Avatar"; // Importing the Avatar component from the Material-UI library
+import Button from "@mui/material/Button"; // Importing the Button component from the Material-UI library
+import TextField from "@mui/material/TextField"; // Importing the TextField component from the Material-UI library
+import FormControlLabel from "@mui/material/FormControlLabel"; // Importing the FormControlLabel component from the Material-UI library
+import Checkbox from "@mui/material/Checkbox"; // Importing the Checkbox component from the Material-UI library
+import Grid from "@mui/material/Grid"; // Importing the Grid component from the Material-UI library
+import Box from "@mui/material/Box"; // Importing the Box component from the Material-UI library
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined"; // Importing the LockOutlinedIcon component from the Material-UI library
+import Typography from "@mui/material/Typography"; // Importing the Typography component from the Material-UI library
+import Container from "@mui/material/Container"; // Importing the Container component from the Material-UI library
+import { Link, useNavigate } from "react-router-dom"; // Importing the Link and useNavigate components from the react-router-dom library
+import { Card } from "@mui/material"; // Importing the Card component from the Material-UI library
 
 function Copyright(props) {
   return (
@@ -27,17 +27,18 @@ function Copyright(props) {
 }
 
 export default function SignUp() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Creating a navigate function using the useNavigate hook from react-router-dom
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    // Creating a handleSubmit function that will be called when the form is submitted
+    event.preventDefault(); // Preventing the default form submission behavior
+    const data = new FormData(event.currentTarget); // Creating a new FormData object from the form data
     if (
-      data.get("email") !== "" &&
-      data.get("password") !== "" &&
-      data.get("firstName") !== "" &&
-      data.get("lastName") !== ""
+      data.get("email") !== "" && // Checking if the email field is not empty
+      data.get("password") !== "" && // Checking if the password field is not empty
+      data.get("firstName") !== "" && // Checking if the firstName field is not empty
+      data.get("lastName") !== "" // Checking if the lastName field is not empty
     ) {
-      navigate("/");
+      navigate("/"); // Navigating to the home page if all the fields are filled
     }
   };
 
