@@ -137,7 +137,8 @@ const Home = () => {
 
               <Typography align="center" variant="body1" color="textSecondary">
                 SignSpeak uses AI to translate sign language into spoken and
-                written language in real-time.
+                written language in real-time using computer vision and hand
+                landmarks.
               </Typography>
               <img
                 src={img5}
