@@ -1,5 +1,6 @@
 import { Typography, Grid, Button, Box } from "@mui/material";
 import { Link, Link as RouterLink } from "react-router-dom";
+import ImageSlider from "./slider";
 import img1 from "../images/img1.jpg";
 import img2 from "../images/img2.jpg";
 import img3 from "../images/img3.jpg";
@@ -66,7 +67,6 @@ const Home = () => {
             </Grid>
           </Grid>
         </Grid>
-
         <Grid item container xs={12} md={6} alignItems="center">
           <Grid item xs={12}>
             <Typography align="center" variant="h4" gutterBottom>
@@ -183,7 +183,9 @@ const Home = () => {
           />
         </Grid>
       </Grid>
-
+      <Grid>
+        <ImageSlider />
+      </Grid>
       <Footer />
     </>
   );
