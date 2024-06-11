@@ -4,13 +4,16 @@ import img1 from "../images/img1.jpg";
 import img2 from "../images/img2.jpg";
 import img3 from "../images/img3.jpg";
 import img4 from "../images/img4.jpg";
+import img5 from "../images/img5.jpeg";
+import img6 from "../images/img6.jpeg";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 const tryBtnStyle = {
-  fontFamily: "sans-serif",
-  fontSize: "15px",
+  fontFamily: "Bavose",
+  fontWeight: "bold",
+  fontSize: "18px",
   textTransform: "none",
   transition: "0.3s",
   borderRadius: "10px",
@@ -19,6 +22,7 @@ const tryBtnStyle = {
   backgroundColor: "#c83c4c",
   boxShadow: "0 3px 5px 2px rgba(255, 255, 255, .5)",
   "&:hover": {
+    fontSize: "18px",
     backgroundColor: "#c83c4c",
     transition: "0.5 ease-in-out",
     transform: "scale(1.1)",
@@ -130,10 +134,16 @@ const Home = () => {
               <Typography align="center" variant="h5" gutterBottom>
                 Sign Language Translation
               </Typography>
+
               <Typography align="center" variant="body1" color="textSecondary">
                 SignSpeak uses AI to translate sign language into spoken and
                 written language in real-time.
               </Typography>
+              <img
+                src={img5}
+                alt="Illustration of how SignSpeak works"
+                style={{ maxWidth: "100%", borderRadius: "10px" }}
+              />
             </Grid>
             <Grid item xs={12} md={6}>
               <Typography align="center" variant="h5" gutterBottom>
@@ -143,6 +153,11 @@ const Home = () => {
                 Our intuitive and easy-to-use interface ensures a seamless
                 experience for users of all skill levels.
               </Typography>
+              <img
+                src={img6}
+                alt="Illustration of how SignSpeak works"
+                style={{ maxWidth: "100%", borderRadius: "10px" }}
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -220,17 +235,34 @@ const Footer = () => {
           <Typography variant="h6" gutterBottom>
             Online Courses
           </Typography>
+          <Link
+            to="https://space340.com/events/921669831/arabic-sign-language-certification-course?&v=latest"
+            style={{ textDecoration: "none", color: "inherit" }}
+            onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
+            onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+          >
+            Arsl
+          </Link>
+
           <Typography variant="body2" gutterBottom>
-            ArSL
+            <Link
+              to="https://en.wikipedia.org/wiki/Arab_sign-language_family"
+              style={{ textDecoration: "none", color: "inherit" }}
+              onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
+              onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+            >
+              Alphabetics
+            </Link>
           </Typography>
           <Typography variant="body2" gutterBottom>
-            ASL
-          </Typography>
-          <Typography variant="body2" gutterBottom>
-            Alphabetics{" "}
-          </Typography>
-          <Typography variant="body2" gutterBottom>
-            Numbers
+            <Link
+              to="https://www.wikihow.com/Count-to-100-in-American-Sign-Language"
+              style={{ textDecoration: "none", color: "inherit" }}
+              onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
+              onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+            >
+              Numbers
+            </Link>
           </Typography>
         </Grid>
         <Grid item>
