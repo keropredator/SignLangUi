@@ -1,28 +1,34 @@
 // Importing necessary components from the Material-UI library
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import KiroImage from "./team_images/kiro.jpeg";
+import MarwaImage from "./team_images/marwa.jpeg";
+import OmarImage from "./team_images/omar.jpeg";
+import SalmaImage from "./team_images/salma.jpeg";
 import AhmedImage from "./team_images/ahmed.jpeg";
+import MartremImage from "./team_images/martrem.jpeg";
+import NirvanaImage from "./team_images/nirvana.jpeg";
 
 // Array of team members with their names, roles, and images
 const teamMembers = [
   {
     name: "Kirolos Magdy",
     role: "AI Developer",
-    image: "https://avatars.githubusercontent.com/u/77224296?v=4",
+    image: KiroImage,
   },
   {
     name: "Marwa Hany",
     role: "AI Developer",
-    image: "./team_images/marwa.jpg",
+    image: MarwaImage,
   },
   {
     name: "Omar Mohammed",
     role: "Back-end Developer",
-    image: "https://avatars.githubusercontent.com/u/77224296?v=4",
+    image: OmarImage,
   },
   {
     name: "Salma Ayman",
     role: "Back-end Developer",
-    image: "https://avatars.githubusercontent.com/u/77224296?v=4",
+    image: SalmaImage,
   },
   {
     name: "Ahmed Khafaga",
@@ -32,12 +38,12 @@ const teamMembers = [
   {
     name: "Martrem Yasser",
     role: "Front-end Developer",
-    image: "./team_images/marteam.jpeg",
+    image: MartremImage,
   },
   {
     name: "Nirvana Demian",
     role: "Front-end Developer",
-    image: "./team_images/nirvana.jpeg",
+    image: NirvanaImage,
   },
 ];
 
