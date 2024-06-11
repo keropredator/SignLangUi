@@ -210,13 +210,7 @@ const Footer = () => {
             FAQ
           </Typography>
           <Typography variant="body2" gutterBottom>
-            Shipping
-          </Typography>
-          <Typography variant="body2" gutterBottom>
-            Returns
-          </Typography>
-          <Typography variant="body2" gutterBottom>
-            Order Status
+            Donate
           </Typography>
           <Typography variant="body2" gutterBottom>
             Payment Options
@@ -224,19 +218,19 @@ const Footer = () => {
         </Grid>
         <Grid item>
           <Typography variant="h6" gutterBottom>
-            Online Shop
+            Online Courses
           </Typography>
           <Typography variant="body2" gutterBottom>
-            Watch
+            ArSL
           </Typography>
           <Typography variant="body2" gutterBottom>
-            Bag
+            ASL
           </Typography>
           <Typography variant="body2" gutterBottom>
-            Shoes
+            Alphabetics{" "}
           </Typography>
           <Typography variant="body2" gutterBottom>
-            Dress
+            Numbers
           </Typography>
         </Grid>
         <Grid item>
