@@ -30,8 +30,6 @@ import imga26 from "../images/alpha/imga26.png";
 import imga27 from "../images/alpha/imga27.png";
 import imga28 from "../images/alpha/imga28.png";
 
-// Import images for all the remaining Arabic alphabet characters up to "ي"
-
 const ImageSlider = () => {
   const images = [
     { src: imga1, alt: "أ" },
@@ -62,29 +60,28 @@ const ImageSlider = () => {
     { src: imga26, alt: "ه" },
     { src: imga27, alt: "و" },
     { src: imga28, alt: "ي" },
-    // Add all the remaining images here up to "ي"
   ];
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 6,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 4,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -92,14 +89,11 @@ const ImageSlider = () => {
   };
 
   const sliderImageContainerStyle = {
-    padding: "0",
-    margin: "0",
+    padding: "5px",
   };
 
   const sliderImageStyle = {
-    width: "95%",
-    maxWidth: "150px",
-    display: "block",
+    width: "90%",
     borderRadius: "10px",
   };
 
