@@ -66,9 +66,9 @@ const teamMembers = [
     image: AhmedImage,
     context:
       "Ahmed creates interactive and user-friendly interfaces, ensuring an excellent user experience.",
-    github: "",
-    facebook: "",
-    linkedin: "",
+    github: "https://github.com/ahmedkhafaga621",
+    facebook: "https://www.facebook.com/dido.soubhy",
+    linkedin: "https://www.linkedin.com/in/ahmed-khafaga-414707231/",
   },
   {
     name: "Martrem Yasser",
