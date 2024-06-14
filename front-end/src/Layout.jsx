@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import { AppBar, Box, Button, Grid, Toolbar } from "@mui/material";
-import { Link, useLocation, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "./pages/images/Logo.png";
 
 const btnStyle = {
@@ -13,6 +15,11 @@ const btnStyle = {
     border: "none",
     backgroundColor: "#dfdddb",
   },
+};
+const activeBtnStyle = {
+  ...btnStyle,
+  color: "#c83c4c",
+  backgroundColor: "#dfdddb",
 };
 const btnStyle2 = {
   fontFamily: "monospace",
@@ -52,30 +59,72 @@ const Layout = ({ children }) => {
                 />
               </Link>
               <Box display="flex" gap={3} justifyContent="center" flexGrow={1}>
-                <Link
+                <NavLink
                   to="/"
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={() => ({
+                    textDecoration: "none",
+                    color: "inherit",
+                  })}
                 >
-                  <Button variant="outlined" sx={btnStyle}>
+                  <Button
+                    variant="outlined"
+                    sx={location.pathname === "/" ? activeBtnStyle : btnStyle}
+                  >
                     Home
                   </Button>
-                </Link>
+                </NavLink>
                 <NavLink
                   to="/translate"
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={() => ({
+                    textDecoration: "none",
+                    color: "inherit",
+                  })}
                 >
-                  <Button variant="outlined" sx={btnStyle}>
+                  <Button
+                    variant="outlined"
+                    sx={
+                      location.pathname === "/translate"
+                        ? activeBtnStyle
+                        : btnStyle
+                    }
+                  >
                     Translate
                   </Button>
                 </NavLink>
-                <Link
+                <NavLink
                   to="/team"
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={() => ({
+                    textDecoration: "none",
+                    color: "inherit",
+                  })}
                 >
-                  <Button variant="outlined" sx={btnStyle}>
+                  <Button
+                    variant="outlined"
+                    sx={
+                      location.pathname === "/team" ? activeBtnStyle : btnStyle
+                    }
+                  >
                     Team
                   </Button>
-                </Link>
+                </NavLink>
+                <NavLink
+                  to="/ContactUs"
+                  style={() => ({
+                    textDecoration: "none",
+                    color: "inherit",
+                  })}
+                >
+                  <Button
+                    variant="outlined"
+                    sx={
+                      location.pathname === "/ContactUs"
+                        ? activeBtnStyle
+                        : btnStyle
+                    }
+                  >
+                    Contact Us
+                  </Button>
+                </NavLink>
               </Box>
               <Link
                 to="/sign-up"
@@ -95,4 +144,5 @@ const Layout = ({ children }) => {
     </Grid>
   );
 };
+
 export default Layout;

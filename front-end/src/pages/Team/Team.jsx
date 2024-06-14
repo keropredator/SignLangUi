@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import {
   Card,
@@ -6,7 +7,9 @@ import {
   Grid,
   Typography,
   Collapse,
+  IconButton,
 } from "@mui/material";
+import { GitHub, Facebook, LinkedIn } from "@mui/icons-material";
 import KiroImage from "./team_images/kiro.jpeg";
 import MarwaImage from "./team_images/marwa.jpeg";
 import OmarImage from "./team_images/omar.jpeg";
@@ -23,6 +26,9 @@ const teamMembers = [
     image: KiroImage,
     context:
       "Kirolos specializes in developing and training AI models, focusing on sign language recognition.",
+    github: "https://github.com/keropredator",
+    facebook: "https://www.facebook.com/kero.top.9081/",
+    linkedin: "https://www.linkedin.com/in/kirolos-magdy-charon/",
   },
   {
     name: "Marwa Hany",
@@ -30,6 +36,9 @@ const teamMembers = [
     image: MarwaImage,
     context:
       "Marwa works on enhancing AI algorithms for better accuracy and efficiency in sign language translation.",
+    github: "",
+    facebook: "",
+    linkedin: "",
   },
   {
     name: "Omar Mohammed",
@@ -37,6 +46,9 @@ const teamMembers = [
     image: OmarImage,
     context:
       "Omar manages the server-side logic and ensures the smooth operation of the application's back-end.",
+    github: "",
+    facebook: "https://www.facebook.com/miromido2010",
+    linkedin: "",
   },
   {
     name: "Salma Ayman",
@@ -44,6 +56,9 @@ const teamMembers = [
     image: SalmaImage,
     context:
       "Salma designs and implements scalable back-end services, focusing on data handling and security.",
+    github: "https://github.com/SalmaAyman2002",
+    facebook: "https://www.facebook.com/profile.php?id=100088308382566",
+    linkedin: "https://www.linkedin.com/in/salma-ayman-402053314/",
   },
   {
     name: "Ahmed Khafaga",
@@ -51,6 +66,9 @@ const teamMembers = [
     image: AhmedImage,
     context:
       "Ahmed creates interactive and user-friendly interfaces, ensuring an excellent user experience.",
+    github: "",
+    facebook: "",
+    linkedin: "",
   },
   {
     name: "Martrem Yasser",
@@ -58,6 +76,9 @@ const teamMembers = [
     image: MartremImage,
     context:
       "Martrem specializes in responsive design and front-end performance optimization.",
+    github: "https://github.com/MartreemMuris",
+    facebook: "https://www.facebook.com/profile.php?id=100010903544569",
+    linkedin: "https://www.linkedin.com/in/martrem-yasser-856140241/",
   },
   {
     name: "Nirvana Demian",
@@ -65,6 +86,9 @@ const teamMembers = [
     image: NirvanaImage,
     context:
       "Nirvana focuses on developing accessible and visually appealing front-end components.",
+    github: "https://github.com/nirvanademian",
+    facebook: "https://m.facebook.com/mora.damian.5?mibextid=LQQJ4d",
+    linkedin: "https://www.linkedin.com/in/nirvana-demian-4b1525269/",
   },
 ];
 
@@ -133,6 +157,43 @@ const Team = () => {
                 </Typography>
               </Collapse>
             </CardContent>
+            {/* Icons for GitHub, Facebook, and LinkedIn */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "1rem",
+                marginBottom: "1rem",
+              }}
+            >
+              <IconButton
+                component="a"
+                href={member.github}
+                target="_blank"
+                aria-label="GitHub"
+                sx={{ color: "#171515" }}
+              >
+                <GitHub />
+              </IconButton>
+              <IconButton
+                component="a"
+                href={member.facebook}
+                target="_blank"
+                aria-label="Facebook"
+                sx={{ color: "#1877F2" }}
+              >
+                <Facebook />
+              </IconButton>
+              <IconButton
+                component="a"
+                href={member.linkedin}
+                target="_blank"
+                aria-label="LinkedIn"
+                sx={{ color: "#0A66C2" }}
+              >
+                <LinkedIn />
+              </IconButton>
+            </div>
           </Card>
         </Grid>
       ))}

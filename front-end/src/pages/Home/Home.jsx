@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import { Typography, Grid, Button, Box } from "@mui/material";
-import { Link, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import ImageSlider from "./slider";
 import img1 from "../images/img1.jpg";
 import img2 from "../images/img2.jpg";
@@ -11,6 +13,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
 const tryBtnStyle = {
   fontFamily: "Bavose",
   fontWeight: "bold",
@@ -29,7 +32,10 @@ const tryBtnStyle = {
     transform: "scale(1.1)",
   },
 };
+
 const Home = () => {
+  const location = useLocation();
+
   return (
     <>
       <Grid container rowSpacing={40} columnSpacing={10} sx={{ p: 5 }}>
@@ -186,12 +192,14 @@ const Home = () => {
       <Grid>
         <ImageSlider />
       </Grid>
-      <Footer />
+      <Footer currentPath={location.pathname} />
     </>
   );
 };
 
-const Footer = () => {
+const Footer = ({ currentPath }) => {
+  const isActive = (path) => currentPath === path;
+
   return (
     <Box
       component="footer"
@@ -202,14 +210,19 @@ const Footer = () => {
           <Typography variant="h6" gutterBottom>
             Company
           </Typography>
-          <Link
+          <RouterLink
             to="/team"
-            style={{ textDecoration: "none", color: "inherit" }}
+            style={{
+              textDecoration: "none",
+              color: isActive("/team") ? "#c83c4c" : "inherit",
+              pointerEvents: isActive("/team") ? "none" : "auto",
+              cursor: isActive("/team") ? "default" : "pointer",
+            }}
             onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
             onMouseOut={(e) => (e.target.style.textDecoration = "none")}
           >
             About Us
-          </Link>
+          </RouterLink>
           <Typography variant="body2" gutterBottom>
             Our Services
           </Typography>
@@ -238,34 +251,34 @@ const Footer = () => {
           <Typography variant="h6" gutterBottom>
             Online Courses
           </Typography>
-          <Link
+          <RouterLink
             to="https://space340.com/events/921669831/arabic-sign-language-certification-course?&v=latest"
             style={{ textDecoration: "none", color: "inherit" }}
             onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
             onMouseOut={(e) => (e.target.style.textDecoration = "none")}
           >
             Arsl
-          </Link>
+          </RouterLink>
 
           <Typography variant="body2" gutterBottom>
-            <Link
+            <RouterLink
               to="https://en.wikipedia.org/wiki/Arab_sign-language_family"
               style={{ textDecoration: "none", color: "inherit" }}
               onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
               onMouseOut={(e) => (e.target.style.textDecoration = "none")}
             >
               Alphabetics
-            </Link>
+            </RouterLink>
           </Typography>
           <Typography variant="body2" gutterBottom>
-            <Link
+            <RouterLink
               to="https://www.wikihow.com/Count-to-100-in-American-Sign-Language"
               style={{ textDecoration: "none", color: "inherit" }}
               onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
               onMouseOut={(e) => (e.target.style.textDecoration = "none")}
             >
               Numbers
-            </Link>
+            </RouterLink>
           </Typography>
         </Grid>
         <Grid item>
@@ -274,40 +287,40 @@ const Footer = () => {
           </Typography>
           <Grid container spacing={1}>
             <Grid item>
-              <Link
-                href="https://www.facebook.com/yourpage"
+              <RouterLink
+                to="https://www.facebook.com/yourpage"
                 target="_blank"
                 rel="noopener"
               >
                 <FacebookIcon color="primary" />
-              </Link>
+              </RouterLink>
             </Grid>
             <Grid item>
-              <Link
-                href="https://twitter.com/yourhandle"
+              <RouterLink
+                to="https://twitter.com/yourhandle"
                 target="_blank"
                 rel="noopener"
               >
                 <TwitterIcon color="primary" />
-              </Link>
+              </RouterLink>
             </Grid>
             <Grid item>
-              <Link
-                href="https://www.instagram.com/yourhandle"
+              <RouterLink
+                to="https://www.instagram.com/yourhandle"
                 target="_blank"
                 rel="noopener"
               >
                 <InstagramIcon color="primary" />
-              </Link>
+              </RouterLink>
             </Grid>
             <Grid item>
-              <Link
-                href="https://www.linkedin.com/company/yourcompany"
+              <RouterLink
+                to="https://www.linkedin.com/company/yourcompany"
                 target="_blank"
                 rel="noopener"
               >
                 <LinkedInIcon color="primary" />
-              </Link>
+              </RouterLink>
             </Grid>
           </Grid>
         </Grid>

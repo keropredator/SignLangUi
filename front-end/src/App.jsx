@@ -4,6 +4,7 @@ import Layout from "./Layout";
 import Home from "./pages/Home/Home";
 import Translate from "./pages/Translate/Translate";
 import Team from "./pages/Team/Team";
+import ContactUs from "./pages/ContactUs/ContactUs";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/" Component={Home} />
             <Route path="/translate" Component={Translate} />
             <Route path="/team" Component={Team} />
+            <Route path="/ContactUs" Component={ContactUs} />
             <Route path="/sign-up" Component={SignUp} />
             <Route path="/sign-in" Component={SignIn} />
           </Routes>
