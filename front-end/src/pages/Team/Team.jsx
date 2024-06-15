@@ -36,9 +36,9 @@ const teamMembers = [
     image: MarwaImage,
     context:
       "Marwa works on enhancing AI algorithms for better accuracy and efficiency in sign language translation.",
-    github: "",
-    facebook: "",
-    linkedin: "",
+    github: "https://github.com/Marwa-Hany",
+    facebook: "https://www.facebook.com/marwahanyfouad",
+    linkedin: "https://www.linkedin.com/in/marwa-hany-fouad/",
   },
   {
     name: "Omar Mohammed",
