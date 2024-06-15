@@ -23,7 +23,7 @@ const btnStyle = {
   borderRadius: "10px",
   padding: "10px 20px",
   "&:hover": {
-    backgroundColor: "#00a3cc", // Slightly darker shade for hover effect
+    backgroundColor: "#00a3cc", // Slightly darker shade for hover
   },
 };
 
