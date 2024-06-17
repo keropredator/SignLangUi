@@ -87,7 +87,7 @@ const ContactUs = () => {
         <img
           src={contactImage} // Update with your actual image path
           alt="Contact Us Illustration"
-          style={{ maxWidth: "100%", borderRadius: "10px" }}
+          style={{ maxWidth: "100%", borderRadius: "10px", padding: "40px" }}
         />
       </Grid>
     </Grid>
