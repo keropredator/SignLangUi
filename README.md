@@ -2,6 +2,7 @@
 
 - cd front-end
 - npm i
+- npm install framer-motion react-intersection-observer
 - npm run dev
 
 ---
