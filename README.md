@@ -22,10 +22,17 @@ npm i
 npm install framer-motion react-intersection-observer react-slick slick-carousel
 ```
 ### Run the project
+- open new terminal
+- cd SignLangUi
+- cd back-end
 ```bash
 # Start the backend server
 uvicorn main:app --reload
-
+```
+- open new terminal
+- cd SignLangUi
+- cd front-end
+```bash
 # Start the frontend development server
 npm run dev
 ```
