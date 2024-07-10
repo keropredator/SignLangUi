@@ -6,7 +6,6 @@ SignSpeaks is a project designed to help deaf and hardhearing people to comunica
 ## Setup Instructions
 
 ### Clone the Repository and Install Dependencies
-### Clone the Repository and Install Dependencies
 ```bash
 # Clone the repository and navigate into the project directory
 git clone https://github.com/keropredator/SignLangUi.git
@@ -19,15 +18,15 @@ pip install -r requirements.txt
 cd front-end  
 
 # Install frontend dependencies
-npm install
+npm i
 npm install framer-motion react-intersection-observer react-slick slick-carousel
 ```
 ### Run the project
 ```bash
 # Start the backend server
-uvicorn main:app --reload  # or the appropriate command to start your backend
+uvicorn main:app --reload
 
 # Start the frontend development server
-npm run dev  # or the appropriate command to start your frontend
+npm run dev
 ```
 
