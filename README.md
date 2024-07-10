@@ -36,4 +36,5 @@ uvicorn main:app --reload
 # Start the frontend development server
 npm run dev
 ```
-
+then hold "ctrl" and click on the link that will be in the terminal
+it will be opend in your browser, have fun using our project ^^
